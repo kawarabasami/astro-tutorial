@@ -1,7 +1,14 @@
 ---
+import Greeting from '../components/Greeting';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "ホームページ";
 ---
 <BaseLayout pageTitle={pageTitle}>
   <h2>私の素晴らしいブログのサブタイトル</h2>
+  
+  <!-- client:load ... ページロード時にjsがロードされる -->
+  <Greeting client:load messages={["どうも", "こんにちは", "初めまして", "ようこそ"]} />
+  
+  <!-- client:visible ... コンポーネントがページに表示されたらjsがロードされる -->
+  <!-- <Greeting client:visible messages={["どうも", "こんにちは", "初めまして", "ようこそ"]} /> -->
 </BaseLayout>
